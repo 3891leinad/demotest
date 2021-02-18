@@ -9,7 +9,7 @@ import pl.danysoftcompany.demo.service.HelloService;
 @RequiredArgsConstructor
 public class HelloController {
 
-    public final HelloService helloService;
+    private final HelloService helloService;
     @GetMapping("/")
     public String hello(){
         return helloService.helloService();
