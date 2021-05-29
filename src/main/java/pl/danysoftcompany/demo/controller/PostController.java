@@ -2,10 +2,7 @@ package pl.danysoftcompany.demo.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.danysoftcompany.demo.controller.dto.PostDto;
 import pl.danysoftcompany.demo.model.Post;
 import pl.danysoftcompany.demo.service.PostService;
@@ -34,5 +31,17 @@ public class PostController {
     @GetMapping("/posts/{id}")
     public List<Post>  getSinglePost(@PathVariable long id) {
         return postService.getSinglePost(id);
+    }
+    @PostMapping("/posts")
+    public Post addPost(@RequestBody Post post) {
+        return postService.addPost(post);
+    }
+    @PutMapping("/posts")
+    public Post editPost(@RequestBody Post post) {
+        return  postService.editPost(post);
+    }
+    @DeleteMapping("/posts/{id}")
+    public void deletePost(@PathVariable long id) {
+        postService.deletePost(id);
     }
 }
