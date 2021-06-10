@@ -1,3 +1,5 @@
+--liquibase formatted sql
+--changeset ddany:1
 insert into post(id, title, content, created)values (1, 'Test post 1', 'Content 1','2020-11-11T07:52:48.175770');
 insert into post(id, title, content, created)values (2, 'Test post 2', 'Content 2','2020-11-12T07:52:48.178991');
 insert into post(id, title, content, created)values (3, 'Test post 3', 'Content 3','2020-11-13T07:52:48.179089');
